@@ -1,0 +1,67 @@
+---
+import DefaultLayout from '../layouts/DefaultLayout.astro'
+import Hero from '../components/Hero.astro'
+import ContentMedia from '../components/ContentMedia.astro'
+---
+
+<DefaultLayout title="Home">
+  <Hero />
+  <section class="mt-10">
+    <div class="container">
+      <h2 class="mb-5 text-xl md:text-4xl">🚢 Tips Keselamatan Penting untuk Setiap Penumpang 🌊</h2>
+    </div>
+  </section>
+  <ContentMedia imgSrc="/accessible-components.webp">
+    <h2 class="text-3xl">Tetap Tenang, Bertindak Cepat</h2>
+    <p class="text-2xl">
+      Ketenangan adalah kunci dalam situasi darurat. Pelajari langkah-langkah praktis untuk tetap tenang dan bertindak cepat dalam situasi genting di laut.
+    </p>
+  </ContentMedia>
+  <ContentMedia imgSrc="/wcag-compliant.webp" reverseImg={true}>
+    <h2 class="text-3xl">Kenali Lokasi Peralatan Keselamatan</h2>
+    <p class="text-2xl">
+      Pelajari di mana letak peralatan keselamatan seperti pelampung, jaket pelampung, dan peralatan pertolongan pertama. Mengetahui lokasinya dapat mempercepat respons dalam situasi darurat.
+    </p>
+  </ContentMedia>
+  <ContentMedia imgSrc="/accessible-components.webp">
+    <h2 class="text-3xl">Ikuti Petunjuk Evakuasi</h2>
+    <p class="text-2xl">
+      Penting untuk mengikuti petunjuk evakuasi kapal dengan seksama. Pelajari rute evakuasi dan lokasi titik pertemuan untuk memastikan keselamatan Anda selama evakuasi.
+    </p>
+  </ContentMedia>
+  <ContentMedia imgSrc="/wcag-compliant.webp" reverseImg={true}>
+    <h2 class="text-3xl">Gunakan Peralatan Keselamatan dengan Benar</h2>
+    <p class="text-2xl">
+      Pelajari cara mengenakan dan menggunakan pelampung serta jaket pelampung dengan benar. Pastikan Anda memahami cara menggunakan alat keselamatan lainnya seperti pengeras suara dan alat pemadam api ringan.
+    </p>
+  </ContentMedia>
+  <ContentMedia imgSrc="/accessible-components.webp">
+    <h2 class="text-3xl">Hubungi Awak Kapal</h2>
+    <p class="text-2xl">
+      Jika Anda menghadapi situasi darurat, segera hubungi awak kapal. Mereka dilatih untuk menangani berbagai situasi darurat dan dapat memberikan bantuan yang diperlukan.
+    </p>
+  </ContentMedia>
+  <ContentMedia imgSrc="/wcag-compliant.webp" reverseImg={true}>
+    <h2 class="text-3xl">Perhatikan Instruksi dan Peringatan</h2>
+    <p class="text-2xl">
+      Selalu perhatikan instruksi dan peringatan yang diposting di kapal. Mereka memberikan informasi penting tentang tindakan yang harus diambil dalam situasi darurat.
+    </p>
+  </ContentMedia>
+  <ContentMedia imgSrc="/accessible-components.webp">
+    <h2 class="text-3xl">Jangan Menyelinap ke Area Terlarang</h2>
+    <p class="text-2xl">
+      Hindari masuk ke area terlarang di kapal. Mereka mungkin berbahaya dan dapat menghambat upaya evakuasi jika terjadi situasi darurat.
+    </p>
+  </ContentMedia>
+  <section class="mb-32 mt-20">
+    <div class="container">
+      <h2 class="mb-16 text-4xl">
+        🌊 Jelajahi Laut dengan Aman dan Percaya Diri! ⚓</h2>
+      <div>
+        <p>Dengan tips keselamatan yang telah Anda pelajari, Anda siap untuk menjelajahi lautan dengan ketenangan dan kepercayaan diri. Jadilah teladan keselamatan di atas kapal dan pastikan setiap petualangan menjadi pengalaman yang tak terlupakan, tetapi tetap aman.</p>
+    <br>
+        <p>Terima kasih telah bergabung dengan kami di Pusat Keselamatan Laut untuk Penumpang. Tetap waspada, tetap tenang, dan nikmati setiap momen petualangan Anda di laut. Selamat berlayar! 🚢✨</p>
+      </div>
+    </div>
+  </section>
+</DefaultLayout>

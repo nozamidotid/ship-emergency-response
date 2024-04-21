@@ -1,0 +1,217 @@
+---
+import ResponsiveToggle from './ResponsiveToggle.astro'
+import { DarkMode } from 'accessible-astro-components'
+---
+
+<div id="main-navigation" class="is-desktop py-8">
+  <div class="container">
+
+    <div class="wrapper">
+      <DarkMode />
+      <ResponsiveToggle />
+    </div>
+    <nav class="mobile-menu" aria-label="Main navigation mobile">
+      <ul class="menu">
+        <slot />
+      </ul>
+    </nav>
+  </div>
+</div>
+
+<style lang="scss" is:global>
+  @use '../assets/scss/base/breakpoint' as *;
+  @use '../assets/scss/base/outline' as *;
+
+  #main-navigation {
+    > .container {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    &.is-desktop {
+      .desktop-menu {
+        visibility: visible;
+        position: static;
+      }
+
+      .mobile-menu {
+        display: none;
+      }
+
+      .darkmode-toggle {
+        margin-top: -6px;
+      }
+    }
+
+    &.is-mobile {
+      flex-direction: column;
+
+      .mobile-menu {
+        display: none;
+
+        &.show {
+          display: block;
+        }
+      }
+
+      .desktop-menu {
+        visibility: hidden;
+        z-index: -99;
+        position: absolute;
+        left: 0;
+      }
+
+      .responsive-toggle {
+        display: block;
+      }
+    }
+
+    .wrapper {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    nav {
+      > ul {
+        display: flex;
+        gap: 1.5rem;
+        list-style-type: none;
+
+        a,
+        button {
+          text-decoration: none;
+          font-size: 1.125rem;
+          line-height: 1.6875rem;
+        }
+
+        a:hover,
+        a:focus,
+        .is-active,
+        .has-dropdown > button:hover,
+        .has-dropdown > button:focus {
+          text-decoration: underline;
+          text-decoration-thickness: 1px;
+          text-decoration-style: wavy;
+          text-underline-offset: 7px;
+        }
+
+        .is-active {
+          font-weight: bold;
+        }
+      }
+    }
+
+    .mobile-menu {
+      flex-basis: 100%;
+      padding: 2rem 0;
+
+      > ul {
+        flex-direction: column;
+
+        ul {
+          position: relative;
+          margin-top: 1rem;
+        }
+      }
+
+      a,
+      button {
+        display: block;
+        width: 100%;
+        padding: 0.5rem 0;
+      }
+    }
+
+    .has-dropdown {
+      position: relative;
+
+      > button {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0;
+        margin-top: -1px;
+        border: none;
+        color: var(--action-color);
+
+        &:hover {
+          color: var(--action-color-state);
+
+          &::after {
+            border-color: var(--action-color-state);
+          }
+        }
+
+        &::after {
+          content: '';
+          width: 0.85rem;
+          height: 0.75em;
+          margin-top: -0.25rem;
+          border-style: solid;
+          border-width: 0.2em 0.2em 0 0;
+          border-color: var(--action-color);
+          transform: rotate(135deg);
+        }
+
+        &.show {
+          &::after {
+            margin-top: 0.25rem;
+            transform: rotate(-45deg);
+          }
+
+          ~ ul {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+          }
+        }
+      }
+
+      ul {
+        display: none;
+        position: absolute;
+        z-index: 100;
+        min-width: 260px;
+        top: 125%;
+        right: 0;
+        bottom: auto;
+        left: 0;
+        padding: 1rem;
+        background-color: var(--neutral-background);
+        border: 2px solid black;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+      }
+    }
+  }
+
+  .darkmode-toggle {
+    padding: 0;
+    border: none;
+
+    svg {
+      width: 30px;
+      margin-top: 4px;
+    }
+
+    svg path {
+      fill: var(--action-color);
+    }
+
+    &:hover {
+      svg path {
+        fill: var(--action-color-state);
+      }
+    }
+
+    &:focus {
+      @include outline;
+
+      &:not(:focus-visible) {
+        outline: none;
+        box-shadow: none;
+      }
+    }
+  }
+</style>
