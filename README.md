@@ -81,7 +81,7 @@ List things you need to use the software and how to install them.
 
 1. Clone the repo and enter the directory
    ```sh
-   git clone  && cd 
+   git clone https://github.com/nozamidotid/ship-emergency-response.git && cd ship-emergency-response
    ```
 2. Install packages
    ```sh
@@ -127,7 +127,7 @@ Distributed under the MIT License.
 
 Fardan Nozami - [@fardannozami](https://twitter.com/fardannozami)
 
-Project Link: []()
+Project Link: [github](https://github.com/nozamidotid/ship-emergency-response)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
